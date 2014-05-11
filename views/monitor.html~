@@ -1,0 +1,141 @@
+<% include header.html %>
+
+        <!-- Docs page layout -->
+        <div class="bs-header" id="content">
+            <div class="container">
+                <h1>DATA PLANE MONITOR </h1>
+                <p>统计和监控协议栈状态</p>
+            </div>
+        </div>
+
+        <!-- Callout for the old docs link -->
+
+        <div class="container bs-docs-container">
+            <div class="row">
+
+
+
+
+
+                <!-- begin -->
+                <div class="col-md-9" role="main">
+                    <div class="page-header">
+                        <h1 id="download">误码统计</h1>
+
+                    </div>
+
+
+                    <div class="panel panel-info" id="download-additional">
+                        <div class="panel-heading">
+                            下行误码统计
+                        </div>
+                        <div class="panel-body">
+                            <p>统计下行误码</p>
+                        </div>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Username</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                </tr>
+                            </tbody> 
+                        </table>
+                    </div>                
+                    <!-- .............................  -->
+                    <div class="page-header">
+                        <h1 id="bw">基站带宽</h1>
+                    </div>
+
+                    
+
+                    <div class="panel panel-info" id="bw3">
+                        <div class="panel-heading">NCH带宽</div>
+                        <div class="panel-body">
+                            <p>统计下行误码</p>
+                        </div>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Username</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                            </tbody> 
+                        </table>
+                    </div>
+                    <div class="panel panel-info" id="bw4">
+                        <div class="panel-heading">组呼占用带宽</div>
+                        <div class="panel-body">
+                            <p>统计下行误码</p>
+                        </div>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Username</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                            </tbody> 
+                        </table>
+                    </div>
+
+                    <!-- .............................  -->
+                    <div class="page-header">
+                        <h1 id="cloud">云侧</h1>
+                    </div>
+
+                    <!-- .............................  -->
+
+                    <div class="page-header">
+                        <h1 id="UE">UE侧</h1>
+                    </div>
+
+                    <div class="panel panel-info" id="UE1">
+                           
+                    </div>
+                </div>
+            </div>
+<% include footer.html %>
