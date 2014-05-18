@@ -1,7 +1,7 @@
 var os = require('os');  
 var app = require('express')()
    , server = require('http').createServer(app)
-   , io = require('socket.io').listen(server)
+   , io = require('socket.io').listen(8082)
 
 var MongoClient = require('mongodb').MongoClient  
     , format = require('util').format;  
@@ -17,6 +17,11 @@ app.set('views', __dirname + '/views');
 app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'html');
 
+
+var os=require('os');
+var ifaces=os.networkInterfaces();
+
+urls = "http://" + ifaces['eth0'][0].address + ":8082";
 /*
 app.all('*', function(req, res, next) {  
     res.header("Access-Control-Allow-Origin", "*");  
@@ -37,42 +42,17 @@ app.get('/', function (req, res) {
 
 app.get('/monitor', function (req, res) {
     res.render('monitor', {
+		url:urls,
          });
 });
 
-/*
-app.get('/crc', function (req, res) {
-    MongoClient.connect('mongodb://127.0.0.1:27017/test2', function(err, db) {
-       if(err) throw err;
-
-       var collection = db.collection('CellCrc');
-       collection.find().limit(50).toArray(function(err, results) {
-           res.render('crc', {
-             method: req.query.method,
-             res: results
-           });
-           db.close();
-       }); 
-    });
+io.sockets.on('connection', function (socket) {
+	console.log('connection');
+	socket.on('message', function (msg) {
+		console.log(msg['my']);
+		socket.broadcast.emit('news', msg['my']);
+	});
+	socket.broadcast.emit('user connected');
 });
 
-app.get('/bw', function (req, res) {
-    res.render('bw', {
-          });
-});
 
-app.get('/ue', function (req, res) {
-    MongoClient.connect('mongodb://127.0.0.1:27017/test2', function(err, db) {
-       if(err) throw err;
-
-       var collection = db.collection('UeBw');
-       collection.find().limit(50).toArray(function(err, results) {
-           res.render('ue', {
-             method: "0",
-             res: results
-           });
-           db.close();
-       }); 
-    });
-});
-*/

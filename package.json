@@ -11,6 +11,8 @@
 	"dependencies": {
 		"urlencode":"",
 		"express":"",
-		"restler":""
+		"restler":"",
+		"nlogger":"",
+		"mongodb":""
 	}
 }

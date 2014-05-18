@@ -1,141 +1,115 @@
 <% include header.html %>
 
-        <!-- Docs page layout -->
-        <div class="bs-header" id="content">
-            <div class="container">
-                <h1>DATA PLANE MONITOR </h1>
-                <p>统计和监控协议栈状态</p>
-            </div>
-        </div>
 
-        <!-- Callout for the old docs link -->
+<script src="/socket.io/node_modules/socket.io-client/dist/socket.io.js"></script>
+<script>
+	var socket_m = io.connect("<%=url%>");
+	socket_m.on('news', function (data) {
+		console.log(data);
+		socket.emit('my other event', { my: 'data' });
+	});
 
-        <div class="container bs-docs-container">
-            <div class="row">
+	$("#send").click(function() {
+		console.log("hello send");
+	});
+</script>
+
+<!-- Callout for the old docs link -->
+
+<div class="container bs-docs-container">
+	<div class="row">
+
+		<div class="col-md-3">
+			<div class="bs-docs-sidebar hidden-print affix-top" role="complementary">
+				<!-- <ul class="nav bs-sidenav"> -->
+				<ul class="nav bs-sidenav">
+
+					<li class="active">
+					<a href="#overview">Overview</a>
+					<ul class="nav">
+						<li class=""><a href="#overview-doctype">HTML5 doctype</a></li>
+						<li class=""><a href="#overview-mobile">Mobile first</a></li>
+						<li><a href="#overview-type-links">Typography and links</a></li>
+						<li><a href="#overview-normalize">Normalize.css</a></li>
+						<li><a href="#overview-container">Containers</a></li>
+					</ul>
+					</li>
+					<li>
+					<a href="#grid">Grid system</a>
+					<ul class="nav">
+						<li><a href="#grid-intro">Introduction</a></li>
+						<li><a href="#grid-media-queries">Media queries</a></li>
+						<li><a href="#grid-options">Grid options</a></li>
+						<li><a href="#grid-example-basic">Ex: Stacked-to-horizontal</a></li>
+						<li><a href="#grid-example-fluid">Ex: Fluid container</a></li>
+						<li><a href="#grid-example-mixed">Ex: Mobile and desktops</a></li>
+						<li><a href="#grid-example-mixed-complete">Ex: Mobile, tablet, desktops</a></li>
+						<li><a href="#grid-responsive-resets">Responsive column resets</a></li>
+						<li><a href="#grid-offsetting">Offsetting columns</a></li>
+						<li><a href="#grid-nesting">Nesting columns</a></li>
+						<li><a href="#grid-column-ordering">Column ordering</a></li>
+						<li><a href="#grid-less">Less mixins and variables</a></li>
+					</ul>
+					</li>
+					<li>
+					<a href="#type">Typography</a>
+					<ul class="nav">
+						<li><a href="#type-headings">Headings</a></li>
+						<li><a href="#type-body-copy">Body copy</a></li>
+						<li><a href="#type-emphasis">Emphasis</a></li>
+						<li><a href="#type-abbreviations">Abbreviations</a></li>
+						<li><a href="#type-addresses">Addresses</a></li>
+						<li><a href="#type-blockquotes">Blockquotes</a></li>
+						<li><a href="#type-lists">Lists</a></li>
+					</ul>
+					</li>
+
+				</ul>
+			</div>
+		</div>
 
 
 
 
+	<!-- begin -->
+	<div class="col-md-9" role="main">
 
-                <!-- begin -->
-                <div class="col-md-9" role="main">
-                    <div class="page-header">
-                        <h1 id="download">误码统计</h1>
+		<div class="page-header">
+			<h1 id="download">误码统计</h1>
 
-                    </div>
+		</div>
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<button type="button" class="btn btn-primary">海淀</button>
+				<button type="button" class="btn btn-success">朝阳</button>
+			</div>
+		</div>
 
 
-                    <div class="panel panel-info" id="download-additional">
-                        <div class="panel-heading">
-                            下行误码统计
-                        </div>
-                        <div class="panel-body">
-                            <p>统计下行误码</p>
-                        </div>
 
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Username</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
-                            </tbody> 
-                        </table>
-                    </div>                
-                    <!-- .............................  -->
-                    <div class="page-header">
-                        <h1 id="bw">基站带宽</h1>
-                    </div>
+		<div class="panel panel-info" rows="30" id="download-additional">
+			<div class="panel-heading">
+				聊天室	
+			</div>
+			
+			<div class="panel-body">
+					<textarea class="col-md-12" id="textarea" rows="23"></textarea>			
 
-                    
+					<div class="row">
 
-                    <div class="panel panel-info" id="bw3">
-                        <div class="panel-heading">NCH带宽</div>
-                        <div class="panel-body">
-                            <p>统计下行误码</p>
-                        </div>
+					</div>
 
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Username</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                            </tbody> 
-                        </table>
-                    </div>
-                    <div class="panel panel-info" id="bw4">
-                        <div class="panel-heading">组呼占用带宽</div>
-                        <div class="panel-body">
-                            <p>统计下行误码</p>
-                        </div>
+					<div class="row">
+						<div class="col-sm-11">
+							<input type="text" class="form-control" id="inputSuccess" >
+						</div>
+						<button type="button" id="send" class="btn btn-success">Send</button>	
+					</div>
+			</div>
+		</div>                
 
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Username</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                            </tbody> 
-                        </table>
-                    </div>
+	</div>
+</div>
 
-                    <!-- .............................  -->
-                    <div class="page-header">
-                        <h1 id="cloud">云侧</h1>
-                    </div>
-
-                    <!-- .............................  -->
-
-                    <div class="page-header">
-                        <h1 id="UE">UE侧</h1>
-                    </div>
-
-                    <div class="panel panel-info" id="UE1">
-                           
-                    </div>
-                </div>
-            </div>
 <% include footer.html %>
