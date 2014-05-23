@@ -160,6 +160,8 @@ var b = '&region=';
 var c = '&output=json&ak=E6928ee8e014f6b0480fea4c4489201a&page_num=';
 
 var l = new Array('酒店', '中介', '小区', '银行', '大厦', '写字楼') 
+//var l = new Array('酒店', '中介', '小区', '银行', '大厦', '写字楼') 
+//var l = new Array('地铁') 
 
 
 var region = urlencode('北京');
