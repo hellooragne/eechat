@@ -6,13 +6,19 @@
 	var socket_m = io.connect("<%=url%>");
 	socket_m.on('news', function (data) {
 		console.log(data);
-		socket.emit('my other event', { my: 'data' });
+		$("#sendarea").append(data + "\n");
 	});
 
-	$("#send").click(function() {
-		console.log("hello send");
+	$(document).ready(function(){
+		$("#send").click(function(){
+			var data = new Array();
+			socket_m.emit('message', { my: $("#sendtxt")[0].value });
+			$("#sendarea").append($("#sendtxt")[0].value + "\n");
+			//socket_m.emit('message', data);
+		});
 	});
 </script>
+
 
 <!-- Callout for the old docs link -->
 
@@ -94,7 +100,7 @@
 			</div>
 			
 			<div class="panel-body">
-					<textarea class="col-md-12" id="textarea" rows="23"></textarea>			
+					<textarea class="col-md-12" id="sendarea" rows="23"></textarea>			
 
 					<div class="row">
 
@@ -102,7 +108,7 @@
 
 					<div class="row">
 						<div class="col-sm-11">
-							<input type="text" class="form-control" id="inputSuccess" >
+							<input type="text" id="sendtxt" class="form-control" id="inputSuccess" >
 						</div>
 						<button type="button" id="send" class="btn btn-success">Send</button>	
 					</div>
